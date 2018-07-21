@@ -1,13 +1,11 @@
 'use strict';
 
-module.exports = function() {
-  $.gulp.task('serve', function() {
-    $.browserSync.init({
-      port: 9000,
-      //open: false,
-      server: $.config.root
-    });
-
-    $.browserSync.watch([$.config.root + '/**/*.*', '!**/*.css'], $.browserSync.reload);
-  });
+module.exports = function () {
+    $.gulp.task('serve', function () {
+        $.browserSync.init({
+            open: false,
+            server: './build'
+        });
+        $.browserSync.watch('build', $.browserSync.reload);
+    })
 };

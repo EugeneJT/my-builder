@@ -1,8 +1,9 @@
 'use strict';
 
-module.exports = function() {
-  $.gulp.task('clean', function(cb) {
-    return $.del($.config.root, cb);
-  });
+module.exports = function () {
+    $.gulp.task('clean', function () {
+        return $.del([
+            'build'
+        ]);
+    });
 };
-

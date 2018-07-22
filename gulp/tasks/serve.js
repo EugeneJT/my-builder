@@ -3,7 +3,7 @@
 module.exports = function () {
     $.gulp.task('serve', function () {
         $.browserSync.init({
-            port: 9000,
+            //port: 9000,
             open: false,
             server: $.config.root
         });

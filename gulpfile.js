@@ -1,8 +1,11 @@
 'use strict';
 
 global.$ = {
+    package: require('./package.json'),
+    config: require('./gulp/config'),
     path: {
-        task: require('./gulp/paths/tasks.js')
+        task: require('./gulp/paths/tasks.js'),
+        app: require('./gulp/paths/app.js')
     },
     gulp: require('gulp'),
     del: require('del'),
@@ -18,7 +21,11 @@ $.gulp.task('default', $.gulp.series(
     'clean',
     $.gulp.parallel(
         'sass',
-        'pug'
+        'pug',
+        'img',
+        'copy:fonts',
+        'sprite:svg',
+        'js:process'
     ),
     $.gulp.parallel(
         'watch',

@@ -1,15 +1,4 @@
-body {
-  background: gray;
-}
 
-body {
-  color: red;
-}
+@import "blocks/first";
+@import "blocks/hello";
 
-h1 {
-  margin: 10px;
-}
-
-h2 {
-  padding: 3px;
-}
